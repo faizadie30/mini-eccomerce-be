@@ -4,12 +4,12 @@ namespace App\Models;
 
 use Jenssegers\Mongodb\Eloquent\Model as Eloquent;
 
-class Product extends Eloquent
+class Image extends Eloquent
 {
     protected $connection = 'mongodb';
-    protected $collection = 'products';
+    protected $collection = 'images';
 
     protected $fillable = [
-        'product_name', "image", 'stock', 'price', 'category', 'weight', 'description'
+        'path', 'url'
     ];
 }

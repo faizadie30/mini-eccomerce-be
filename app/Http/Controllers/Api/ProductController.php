@@ -8,6 +8,8 @@ use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redis;
 use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\URL;
+use Illuminate\Support\Facades\Validator;
 
 class ProductController extends Controller
 {
@@ -28,12 +30,59 @@ class ProductController extends Controller
 
             return new ProductResource(200, 'success', $products);
         } catch (\Throwable $th) {
-            return new ProductResource(500, 'bad request', []);
+            return response()->json('bad request', 500);
         }
     }
 
-    public function store()
+    public function show($id)
     {
-        dd("hallo");
+        $cache_product = Redis::get('list_products:id:' . $id);
+        $product = [];
+
+        try {
+            if ($cache_product) {
+                $product = json_decode($cache_product, FALSE);
+            } else {
+                $product = Product::find($id);
+                Redis::set('list_products:id:' . $id, json_encode($product));
+            }
+
+            return new ProductResource(200, 'success', $product);
+        } catch (\Throwable $th) {
+            return response()->json($th->getMessage(), 500);
+        }
+    }
+
+    public function store(Request $request)
+    {
+        try {
+            $validator = Validator::make($request->all(), [
+                'product_name' => "required|min:3",
+                'image' => 'required|string',
+                'description' => 'nullable|string',
+                'stock' => 'required|integer',
+                'price' => 'required|integer',
+                'category' => 'required|array',
+                'weight' => 'required|string',
+            ]);
+
+            if ($validator->fails()) {
+                return response()->json($validator->errors(), 422);
+            }
+
+
+            $create_product = Product::create([
+                'product_name' => $request->product_name,
+                'stock' => $request->stock,
+                'price' => $request->price,
+                'weight' => $request->weight,
+                'description'     => $request->description,
+                'image'     => $request->image
+            ]);
+
+            return new ProductResource(200, 'Create product success!', $create_product);
+        } catch (\Throwable $th) {
+            return response()->json('bad request', 500);
+        }
     }
 }

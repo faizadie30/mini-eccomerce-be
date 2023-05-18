@@ -4,7 +4,7 @@ namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class ProductResource extends JsonResource
+class ImageResource extends JsonResource
 {
     public $status;
     public $message;
@@ -21,8 +21,11 @@ class ProductResource extends JsonResource
         $response =  [
             'status'   => $this->status,
             'message'   => $this->message,
-            'data' => empty($this->resource) ? [] : $this->resource
         ];
+
+        if (!empty($this->resource)) {
+            $response['data'] = $this->resource;
+        }
 
         return $response;
     }
