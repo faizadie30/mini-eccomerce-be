@@ -2,8 +2,6 @@
 
 namespace App\Models;
 
-// use Illuminate\Database\Eloquent\Factories\HasFactory;
-// use Illuminate\Database\Eloquent\Model;
 use Jenssegers\Mongodb\Eloquent\Model as Eloquent;
 
 class Cart extends Eloquent
@@ -13,6 +11,6 @@ class Cart extends Eloquent
     protected $collection = 'cart';
 
     protected $fillable = [
-        'product', 'quantity',
+        'product', 'quantity', 'is_checkout'
     ];
 }

@@ -1,0 +1,385 @@
+{
+	"info": {
+		"_postman_id": "85773f3c-9f26-4251-8191-8922545e60b1",
+		"name": "mini-eccomerce-test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5182867"
+	},
+	"item": [
+		{
+			"name": "get list products",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/products",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"products"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "get list products",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/products",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"products"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": 200,\n    \"message\": \"success\",\n    \"data\": {\n        \"current_page\": 1,\n        \"data\": [\n            {\n                \"_id\": \"64659d0a35aa5a8e57c0d64b\",\n                \"product_name\": \"Product 1\",\n                \"description\": \"Lorem ipsum dolor sit amet\",\n                \"price\": 1000000,\n                \"category\": [\n                    \"define\",\n                    \"test\"\n                ],\n                \"stock\": 5001,\n                \"weight\": \"-\"\n            },\n            {\n                \"_id\": \"64659d0a35aa5a8e57c0d64c\",\n                \"product_name\": \"p2\",\n                \"description\": \"Lorem ipsum dolor sit amet\",\n                \"price\": 1000000,\n                \"category\": [\n                    \"define\",\n                    \"test\"\n                ],\n                \"stock\": 5001,\n                \"weight\": \"-\"\n            },\n            {\n                \"_id\": \"64659d0a35aa5a8e57c0d64d\",\n                \"product_name\": \"p3\",\n                \"description\": \"Lorem ipsum dolor sit amet\",\n                \"price\": 1000000,\n                \"category\": [\n                    \"define\",\n                    \"test\"\n                ],\n                \"stock\": 5001,\n                \"weight\": \"-\"\n            },\n            {\n                \"_id\": \"64659e6c35aa5a8e57c0d64f\",\n                \"product_name\": \"Samsung Galaxy A400xs\",\n                \"stock\": 6,\n                \"price\": 16000000,\n                \"category\": [\n                    \"android\",\n                    \"handpohone\",\n                    \"electronic\"\n                ],\n                \"weight\": \"6.2inc\",\n                \"description\": \"this phone android\"\n            },\n            {\n                \"_id\": \"6465a56435aa5a8e57c0d651\",\n                \"product_name\": \"Samsung Galaxy A500xs\",\n                \"stock\": 6,\n                \"price\": 10000000,\n                \"category\": [\n                    \"android\",\n                    \"handpohone\",\n                    \"electronic\"\n                ],\n                \"weight\": \"6.2inc\",\n                \"description\": \"this phone android\"\n            }\n        ],\n        \"first_page_url\": \"http://localhost:8000/api/products?page=1\",\n        \"from\": 1,\n        \"last_page\": 1,\n        \"last_page_url\": \"http://localhost:8000/api/products?page=1\",\n        \"links\": [\n            {\n                \"url\": null,\n                \"label\": \"&laquo; Previous\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://localhost:8000/api/products?page=1\",\n                \"label\": \"1\",\n                \"active\": true\n            },\n            {\n                \"url\": null,\n                \"label\": \"Next &raquo;\",\n                \"active\": false\n            }\n        ],\n        \"next_page_url\": null,\n        \"path\": \"http://localhost:8000/api/products\",\n        \"per_page\": 10,\n        \"prev_page_url\": null,\n        \"to\": 5,\n        \"total\": 5\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "upload image api",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/Users/faizadie/Downloads/images/getimg_ai_img-XsMRiC019QiUzN91azvK8.png",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/images",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"images"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "upload image api",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/Users/faizadie/Downloads/images/getimg_ai_img-XsMRiC019QiUzN91azvK8.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/images",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"images"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": 200,\n    \"message\": \"success\",\n    \"data\": {\n        \"path\": \"public/image_uploads\",\n        \"url\": \"http://localhost:8000/storage/image_uploads/dtjJDPp3wl7YGmNM0OuNWQfW6lmXNZv7j2r5UOOK.png\",\n        \"updated_at\": \"2023-05-18T05:33:00.964000Z\",\n        \"created_at\": \"2023-05-18T05:33:00.964000Z\",\n        \"_id\": \"6465b88c8707ec8b3b0f25f2\"\n    }\n}"
+				},
+				{
+					"name": "bad request",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/Users/faizadie/Downloads/images/getimg_ai_img-XsMRiC019QiUzN91azvK8.png",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/images",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"images"
+							]
+						}
+					},
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"image\": [\n        \"The image field is required.\"\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "create product",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"product_name\":\"Kopi Himalayah\",\n    \"description\": \"kopi yang ditanam di kaki gunung himalayah\",\n    \"stock\": 100,\n    \"price\": 200000,\n    \"category\": [\"pod\",\"liquid\",\"rokok electric\"],\n    \"weight\": \"1kg\",\n    \"image\":\"http://localhost:8000/storage/image_uploads/dtjJDPp3wl7YGmNM0OuNWQfW6lmXNZv7j2r5UOOK.png\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/products",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"products"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "create product",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"product_name\": \"pod relx\",\n    \"description\": \"lorem 203249\",\n    \"stock\": 100,\n    \"price\": 200000,\n    \"category\": [\"pod\",\"liquid\",\"rokok electric\"],\n    \"weight\": \"1kg\",\n    \"image\":\"http://localhost:8000/storage/image_uploads/dtjJDPp3wl7YGmNM0OuNWQfW6lmXNZv7j2r5UOOK.png\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/products",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"products"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": 200,\n    \"message\": \"Create product success!\",\n    \"data\": {\n        \"product_name\": \"pod relx\",\n        \"stock\": 100,\n        \"price\": 200000,\n        \"weight\": \"1kg\",\n        \"description\": \"lorem 203249\",\n        \"image\": \"http://localhost:8000/storage/image_uploads/dtjJDPp3wl7YGmNM0OuNWQfW6lmXNZv7j2r5UOOK.png\",\n        \"updated_at\": \"2023-05-18T05:37:47.140000Z\",\n        \"created_at\": \"2023-05-18T05:37:47.140000Z\",\n        \"_id\": \"6465b9ab8707ec8b3b0f25f3\"\n    }\n}"
+				},
+				{
+					"name": "bad request",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"product_name\": \"\",\n    \"description\": \"lorem 203249\",\n    \"stock\": 100,\n    \"price\": 200000,\n    \"category\": [\"pod\",\"liquid\",\"rokok electric\"],\n    \"weight\": \"1kg\",\n    \"image\":\"http://localhost:8000/storage/image_uploads/dtjJDPp3wl7YGmNM0OuNWQfW6lmXNZv7j2r5UOOK.png\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/products",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"products"
+							]
+						}
+					},
+					"status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+					"code": 422,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"product_name\": [\n        \"The product name field is required.\"\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "get detail product",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/products/6465ba878707ec8b3b0f25f4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"products",
+						"6465ba878707ec8b3b0f25f4"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "get detail product",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/products/6465ba878707ec8b3b0f25f4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"products",
+								"6465ba878707ec8b3b0f25f4"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": 200,\n    \"message\": \"success\",\n    \"data\": {\n        \"_id\": \"6465ba878707ec8b3b0f25f4\",\n        \"product_name\": \"Kopi Himalayah\",\n        \"stock\": 100,\n        \"price\": 200000,\n        \"weight\": \"1kg\",\n        \"description\": \"kopi yang ditanam di kaki gunung himalayah\",\n        \"image\": \"http://localhost:8000/storage/image_uploads/dtjJDPp3wl7YGmNM0OuNWQfW6lmXNZv7j2r5UOOK.png\",\n        \"updated_at\": \"2023-05-18T05:41:27.565000Z\",\n        \"created_at\": \"2023-05-18T05:41:27.565000Z\"\n    }\n}"
+				},
+				{
+					"name": "get detail product",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/products/6465ba878707ec8b3b0f25f4232332",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"products",
+								"6465ba878707ec8b3b0f25f4232332"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": 200,\n    \"message\": \"success\",\n    \"data\": []\n}"
+				}
+			]
+		}
+	]
+}

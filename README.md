@@ -41,3 +41,7 @@ php artisan storage:link
 ```shell
 php artisan serve
 ```
+
+# Note
+
+name collection or document mongo availabel in file model.
