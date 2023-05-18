@@ -7,6 +7,8 @@ mini project for technical test
 1. laravel 9
 2. mongodb new version 2023
 3. php 8.2.5
+4. redis
+5. redis insight for trace keys from redis
 
 # How To Run
 
