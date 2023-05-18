@@ -15,4 +15,5 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::apiResource('/products', App\Http\Controllers\Api\ProductController::class);
+Route::apiResource('/transactions', App\Http\Controllers\Api\CartController::class);
 Route::post('/images', [App\Http\Controllers\Api\ImageController::class, 'store']);

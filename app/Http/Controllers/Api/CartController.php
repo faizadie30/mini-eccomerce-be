@@ -25,12 +25,9 @@ class CartController extends Controller
 
 
             $create_product = Cart::create([
-                'product_name' => $request->product_name,
-                'stock' => $request->stock,
-                'price' => $request->price,
-                'weight' => $request->weight,
-                'description'     => $request->description,
-                'image'     => $request->image
+                'product' => $request->product,
+                'quantity' => $request->quantity,
+                'is_checkout' => $request->is_checkout
             ]);
 
             return new CartResource(200, 'Create product success!', $create_product);
